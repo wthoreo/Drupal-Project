@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c2cf327a3f6be5440cb5307c90349a4",
+    "content-hash": "6dd82408fd4403e79024a7ac7896d78f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1050,6 +1050,56 @@
             }
         },
         {
+            "name": "drupal/bootstrap5",
+            "version": "4.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap5.git",
+                "reference": "4.0.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap5-4.0.8.zip",
+                "reference": "4.0.8",
+                "shasum": "1d7dc5c04ce262628c005671117888caa498453e"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.8",
+                    "datestamp": "1770988520",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Roudakov (vladimiraus)",
+                    "homepage": "https://www.drupal.org/u/vladimiraus",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "vladimiraus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                }
+            ],
+            "description": "Master theme using Bootstrap 5: powerful front-end framework for faster and easier web development.",
+            "homepage": "https://www.drupal.org/project/bootstrap5",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap5",
+                "issues": "https://www.drupal.org/project/issues/bootstrap5"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "11.3.3",
             "source": {
@@ -1716,6 +1766,59 @@
             "homepage": "https://www.drupal.org/project/redirect",
             "support": {
                 "source": "https://git.drupalcode.org/project/redirect"
+            }
+        },
+        {
+            "name": "drupal/solo",
+            "version": "1.0.30",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/solo.git",
+                "reference": "1.0.30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/solo-1.0.30.zip",
+                "reference": "1.0.30",
+                "shasum": "7d80ae9ded718e76388a6be9f6298988cdc5873c"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.30",
+                    "datestamp": "1769734447",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alaa Haddad",
+                    "homepage": "https://alaahaddad.com",
+                    "email": "info@alaahaddad.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Flash Web Center LLC",
+                    "homepage": "https://flashwebcenter.com",
+                    "role": "Organization"
+                }
+            ],
+            "description": "Modern, standalone Drupal theme built with pure JavaScript and W3.CSS framework. No jQuery dependency, mobile-first design, extensive regions, and built-in color schemes.",
+            "homepage": "https://www.drupal.org/project/solo",
+            "support": {
+                "source": "https://git.drupalcode.org/project/solo",
+                "issues": "https://www.drupal.org/project/issues/solo",
+                "docs": "https://www.drupal.org/node/3405889/"
             }
         },
         {
