@@ -1,75 +1,184 @@
-<img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
+# TechBites — Drupal Blog Project
 
-Drupal is an open source content management platform supporting a variety of
-websites ranging from personal weblogs to large community-driven websites. For
-more information, visit the Drupal website, [Drupal.org][Drupal.org], and join
-the [Drupal community][Drupal community].
+A fully functional blog website built with Drupal 11 as part of my journey learning enterprise-level CMS development. This project covers everything from custom content types and Views to user roles, URL aliases, and theme customization.
 
-## Contributing
+---
 
-Drupal is developed on [Drupal.org][Drupal.org], the home of the international
-Drupal community since 2001!
+## 🌐 About the Project
 
-[Drupal.org][Drupal.org] hosts Drupal's [GitLab repository][GitLab repository],
-its [issue queue][issue queue], and its [documentation][documentation]. Before
-you start working on code, be sure to search the [issue queue][issue queue] and
-create an issue if your aren't able to find an existing issue.
+TechBites is a tech-focused blog site where articles can be created, categorized, and featured. It demonstrates real-world Drupal concepts including content management, role-based access control, and dynamic page layouts using the Views module.
 
-Every issue on Drupal.org automatically creates a new community-accessible fork
-that you can contribute to. Learn more about the code contribution process on
-the [Issue forks & merge requests page][issue forks].
+This was built as a learning project to understand how Drupal works as a CMS compared to platforms like WordPress.
 
-## Usage
+---
 
-For a brief introduction, see [USAGE.txt](/core/USAGE.txt). You can also find
-guides, API references, and more by visiting Drupal's [documentation
-page][documentation].
+## ✨ Features
 
-You can quickly extend Drupal's core feature set by installing any of its
-[thousands of free and open source modules][modules]. With Drupal and its
-module ecosystem, you can often build most or all of what your project needs
-before writing a single line of code.
+- **Custom Content Type** — Article content type with fields for title, body, featured image, tags, and a "Featured Post" flag
+- **Views** — Dynamic blog listing and featured posts sidebar built with Drupal's Views module
+- **User Roles** — Three roles configured: Admin, Editor (manage all content), and Author (manage own content only)
+- **URL Aliases** — Clean, SEO-friendly URLs generated automatically via Pathauto (e.g. `/blog/why-i-chose-drupal`)
+- **Taxonomy** — Tag and category system for organizing articles
+- **Webform** — Contact form with email notifications
+- **Custom Theme** — Solo theme with custom logo, color scheme, and sidebar layout
+- **Search** — Keyword search across all published content
+- **Responsive Layout** — Two-column layout with main content and sidebar
 
-## Changelog
+---
 
-Drupal keeps detailed [change records][changelog]. You can search Drupal's
-changes for a record of every notable breaking change and new feature since
-2011.
+## 🛠 Tech Stack
 
-## Security
+| Technology | Purpose |
+|------------|---------|
+| Drupal 11 | CMS Framework |
+| PHP 8.3 | Backend language |
+| MySQL / MariaDB | Database |
+| Composer | PHP dependency management |
+| DDEV | Local development environment |
+| Docker | Container runtime |
+| Git | Version control |
 
-For a list of security announcements, see the [Security advisories
-page][Security advisories] (available as [an RSS feed][security RSS]). This
-page also describes how to subscribe to these announcements via email.
+**Key Drupal Modules Used:**
+- Views & Views UI
+- Pathauto + Token
+- Redirect
+- Webform
+- Taxonomy
+- Solo (contributed theme)
 
-For information about the Drupal security process, or to find out how to report
-a potential security issue to the Drupal security team, see the [Security team
-page][security team].
+---
 
-## Need a helping hand?
+## 🚀 Local Setup
 
-Visit the [Support page][support] or browse [over a thousand Drupal
-providers][service providers] offering design, strategy, development, and
-hosting services.
+Follow these steps to run this project locally.
 
-## Legal matters
+### Prerequisites
 
-Know your rights when using Drupal by reading Drupal core's
-[license](/core/LICENSE.txt).
+- [DDEV](https://ddev.readthedocs.io/en/stable/) installed
+- [Docker](https://www.docker.com/) installed and running
+- [Composer](https://getcomposer.org/) installed
+- Git installed
 
-Learn about the [Drupal trademark and logo policy here][trademark].
+### Installation
 
-[Drupal.org]: https://www.drupal.org
-[Drupal community]: https://www.drupal.org/community
-[GitLab repository]: https://git.drupalcode.org/project/drupal
-[issue queue]: https://www.drupal.org/project/issues/drupal
-[issue forks]: https://www.drupal.org/drupalorg/docs/gitlab-integration/issue-forks-merge-requests
-[documentation]: https://www.drupal.org/documentation
-[changelog]: https://www.drupal.org/list-changes/drupal
-[modules]: https://www.drupal.org/project/project_module
-[security advisories]: https://www.drupal.org/security
-[security RSS]: https://www.drupal.org/security/rss.xml
-[security team]: https://www.drupal.org/drupal-security-team
-[service providers]: https://www.drupal.org/drupal-services
-[support]: https://www.drupal.org/support
-[trademark]: https://www.drupal.com/trademark
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/wthoreo/Drupal-Project.git
+   cd Drupal-Project
+   ```
+
+2. **Install PHP dependencies**
+   ```bash
+   ddev composer install
+   ```
+
+3. **Start DDEV**
+   ```bash
+   ddev start
+   ```
+
+4. **Import the database**
+   ```bash
+   ddev import-db --file=drupal-backup.sql.gz
+   ```
+
+5. **Clear cache**
+   ```bash
+   ddev drush cr
+   ```
+
+6. **Open in browser**
+   ```
+   http://my-drupal-site.ddev.site
+   ```
+
+### Default Admin Login
+- **Username:** admin
+- **Password:** *(set up your own after import)*
+
+---
+
+## 👥 User Roles & Access Control
+
+This project implements role-based access control with three distinct user roles, each with a different view and set of permissions.
+
+### Role Overview
+
+| Role | What They Can Do |
+|------|-----------------|
+| **Admin** | Full access to everything — manage users, modules, theme, and all content |
+| **Editor** | Access the admin panel, create/edit/delete any article regardless of who wrote it |
+| **Author** | Create and manage their own articles only, no access to other users' content |
+| **Anonymous** | View published content, use search, access the contact form |
+
+### What Each Role Sees
+
+**Admin** sees the full Drupal admin toolbar with access to all menus including Structure, Appearance, Extend, Configuration, People, and Reports.
+
+**Editor** sees the admin toolbar with access to the Content overview where they can manage all articles on the site.
+
+**Author** sees a "Write a new post" link in the sidebar (only visible when logged in as Author) which takes them directly to the article creation form. They cannot see or edit other users' content.
+
+**Anonymous visitors** see only the public-facing site — blog posts, search, and the contact form.
+
+### How to Set Up Roles
+
+After importing the database, the roles will already be configured. If you want to set them up from scratch:
+
+1. Go to **People → Roles → Add Role** and create `Editor` and `Author` roles
+
+2. For the **Editor** role, go to **Edit permissions** and enable:
+   - Node: Create/Edit/Delete any Article content
+   - Access the Content overview page
+   - Access administration pages
+   - Use the Basic HTML text format
+
+3. For the **Author** role, go to **Edit permissions** and enable:
+   - Node: Create new Article content
+   - Node: Edit own Article content
+   - Node: Delete own Article content
+   - Access the Files overview page
+
+4. To create test users, go to **People → Add user**, fill in a username, email, and password, and assign the appropriate role.
+
+### Test Credentials
+
+After importing the database you can create test users at **People → Add user**:
+- Create a user with the **Editor** role to test editing any content
+- Create a user with the **Author** role to test the restricted content creation view
+
+---
+
+## 📁 Project Structure
+
+```
+├── web/
+│   ├── core/               # Drupal core (managed by Composer)
+│   ├── modules/
+│   │   └── contrib/        # Contributed modules (managed by Composer)
+│   ├── themes/
+│   │   └── contrib/solo/   # Solo theme
+│   └── sites/default/      # Site configuration and uploaded files
+├── composer.json            # PHP dependencies
+├── drupal-backup.sql.gz     # Database snapshot
+└── README.md
+```
+
+---
+
+## 📚 What I Learned
+
+- How Drupal's entity system works (nodes, fields, taxonomy, users)
+- Building dynamic content displays with Views without writing SQL
+- Role-based access control and permission management
+- Using Composer and DDEV for professional local development workflows
+- Theme customization in Drupal
+- Syncing a CMS project across multiple machines using Git + database exports
+
+---
+
+## 👤 Author
+
+**Orion Bhattacharya**  
+Learning web development and CMS platforms.  
+GitHub: [@wthoreo](https://github.com/wthoreo)
