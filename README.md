@@ -113,13 +113,17 @@ This project implements role-based access control with three distinct user roles
 
 ### What Each Role Sees
 
-**Admin** sees the full Drupal admin toolbar with access to all menus including Structure, Appearance, Extend, Configuration, People, and Reports.
+**Anonymous visitor** — sees the clean public-facing site with no editing options. Only a Log in button is visible in the top right.
 
-**Editor** sees the admin toolbar with access to the Content overview where they can manage all articles on the site.
+![Anonymous view](screenshots/anonymous-view.png)
 
-**Author** sees a "Write a new post" link in the sidebar (only visible when logged in as Author) which takes them directly to the article creation form. They cannot see or edit other users' content.
+**Author** — after logging in, the header shows "My account" and "Log out". A hamburger menu (☰) appears in the top right corner which opens a sidebar containing a "Write a new post" link — this is only visible to Authors and takes them directly to the article creation form. Authors cannot edit other users' content.
 
-**Anonymous visitors** see only the public-facing site — blog posts, search, and the contact form.
+![Author view](screenshots/author-view.png)
+
+**Editor** — when viewing any blog post, the Editor sees View, Edit, and Delete buttons at the top of the article. This gives them full control over all content on the site regardless of who wrote it.
+
+![Editor view](screenshots/editor-view.png)
 
 ### How to Set Up Roles
 
